@@ -1,13 +1,23 @@
 ---
+import MenuIcon from "./icons/MenuIcon.astro";
+import SearchIcon from "./icons/SearchIcon.astro";
 ---
-
-<header>
-    <nav class="bg-backgroundHimare-200 shadow">
-        <div class="container flex gap-4 md:gap-2 items-center justify-center p-6 mx-auto text-gray-600 capitalize">
-            <a href="/" class="transition-colors duration-300 transform border-b-2 border-accent-500 mx-1.5 sm:mx-6">Inicio</a>
+<!-- aquí con fixed lo hacemos sticky -->
+<header class="absolute w-full top-10">
+  <nav>
+    <div
+      class="flex items-center justify-between p-6 text-himareDarkBlue w-full"
+    >
+      <!-- <a href="/" class="transition-colors duration-300 transform border-b-2 border-accent-500 mx-1.5 sm:mx-6">Inicio</a>
             <a href="/services" class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform  hover:border-blue-500 mx-1.5 sm:mx-6">Servicios</a>
             <a href="/blog" class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform  hover:border-blue-500 mx-1.5 sm:mx-6">Blog</a>
-            <a href="/about-me" class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform  hover:border-blue-500 mx-1.5 sm:mx-6">Sobre mí</a>
-        </div>
-    </nav>
+            <a href="/about-me" class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform  hover:border-blue-500 mx-1.5 sm:mx-6">Sobre mí</a> -->
+      <MenuIcon class="w-8" />
+      <a class="flex flex-col items-center justify-center" href="/">
+        <span class="font-theSeasons text-4xl">HIMARË</span>
+        <span class="font-theSeasons text-sm">Comunicación y Branding</span>
+      </a>
+      <SearchIcon class="w-8" />
+    </div>
+  </nav>
 </header>
