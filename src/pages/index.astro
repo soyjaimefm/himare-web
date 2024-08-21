@@ -5,7 +5,7 @@ import Header from "../components/Header.astro";
 ---
 
 <Layout title="Himare | Home">
-    <!-- <section class="container mx-auto mt-6 overflow-hidden sm:grid sm:grid-cols-2 bg-[url('/Hero-img.jpeg')]">
+  <!-- <section class="container mx-auto mt-6 overflow-hidden sm:grid sm:grid-cols-2 bg-[url('/Hero-img.jpeg')]">
         <div class="p-8 md:p-12 lg:px-16 lg:py-24">
             <div class="mx-auto max-w-xl text-center sm:text-left">
                 <h1 class="text-2xl font-bold text-gray-600 md:text-3xl">
@@ -35,17 +35,47 @@ import Header from "../components/Header.astro";
         />
     </section> -->
 
-    <section class="bg-[url('/Hero-img.jpeg')] h-96 bg-cover"></section>
-    <section class="max-w-6xl container mx-auto py-12 px-8">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium laudantium laborum mollitia laboriosam, magnam eum delectus enim temporibus itaque quasi ea reprehenderit? Ad deleniti doloribus veritatis sunt nam ex iure!</p>
-    </section>
-    <section class="bg-accent-300 mt-6">
-        <blockquote class="container mx-auto py-8 text-xl italic font-semibold text-center text-gray-600">
-            <p>“Make it simple, but significant”</p>
+  <section class="bg-[url('/Hero-img.jpg')] h-[70vh] bg-cover"></section>
+  <section class="max-w-6xl container mx-auto py-12 px-8">
+    <p class="text-center">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium
+      laudantium laborum mollitia laboriosam, magnam eum delectus enim
+      temporibus itaque quasi ea reprehenderit? Ad deleniti doloribus veritatis
+      sunt nam ex iure!
+    </p>
+  </section>
 
-        </blockquote>
-    </section>
-    <section class="max-w-6xl container mx-auto py-12 px-8">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium laudantium laborum mollitia laboriosam, magnam eum delectus enim temporibus itaque quasi ea reprehenderit? Ad deleniti doloribus veritatis sunt nam ex iure!</p>
-    </section>
+  <section class="w-full">
+    <div class="grid grid-cols-1 items-center gap-y-6 md:grid-cols-2 border-t-2 border-himareSoftGray">
+      <div class="container mx-auto px-8">
+        <h2 class="font-theSeasons text-6xl text-center tracking-widest mb-6">SERVICIOS</h2>
+        <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis corporis, illo vitae quaerat repellendus sit neque totam itaque. Ratione autem aperiam, obcaecati harum exercitationem tempore reprehenderit voluptas sunt consequatur perspiciatis? Ratione autem aperiam, obcaecati harum exercitationem tempore reprehenderit voluptas sunt consequatur perspiciatis?</p>
+      </div>
+      <div>
+        <img
+          alt="tarjeta himare"
+          src="/section1.jpg"
+          class=""
+          width="100%"
+        />
+      </div>
+
+    </div>
+  </section>
+  <section class="w-full bg-himareSoftGray">
+    <div class="max-w-6xl container mx-auto py-12 px-8">
+      <p class="text-3xl font-theSeasons text-center mb-6">
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+      </p>
+      <p class="text-center">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium
+        laudantium laborum mollitia laboriosam, magnam eum delectus enim
+        temporibus itaque quasi ea reprehenderit? Ad deleniti doloribus veritatis
+        sunt nam ex iure!
+      </p>
+      <p class="text-center mt-8">
+        Lorem ipsum
+      </p>
+    </div>
+  </section>
 </Layout>
