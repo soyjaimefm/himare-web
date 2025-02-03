@@ -1,0 +1,40 @@
+---
+import InstagramIcon from "./icons/InstagramIcon.astro"
+import SearchIcon from "./icons/SearchIcon.astro"
+---
+
+<footer class="bg-hmsoftblue text-hmwhite">
+
+  <div class="flex flex-col gap-8 md:flex-row justify-between items-center container mx-auto p-8">
+    <div class="flex flex-col justify-center items-start gap-8">
+      <a href="/" class="text-hmblue font-serif text-6xl">
+        HIMARË
+      </a>
+      <div class="font-subtitle flex flex-col gap-4">
+        <a class="hover:opacity-60 transition-opacity duration-300" href="mailto:hola@himarestudio.com">hola@himarestudio.com</a>
+        <a class="flex gap-2 items-center hover:opacity-60 transition-opacity duration-300" href="https://www.instagram.com/himarestudio/?hl=es"><InstagramIcon class="size-6"/><span>@himarestudio</span></a>
+      </div>
+    </div>
+    <nav class="font-subtitle">
+      <ul class="flex flex-col items-center justify-center gap-6">
+        <li>
+          <a href="/servicios" class="hover:opacity-60 transition-opacity duration-300">servicios</a>
+        </li>
+        <li>
+          <a href="/about-us" class="hover:opacity-60 transition-opacity duration-300">about us</a>
+        </li>
+        <li>
+          <a href="/recursos" class="hover:opacity-60 transition-opacity duration-300">recursos</a>
+        </li>
+        <li>
+          <a href="/portfolio" class="hover:opacity-60 transition-opacity duration-300">portfolio</a>
+        </li>
+        <li>
+          <a href="/contacta" class="hover:opacity-60 transition-opacity duration-300">contacta</a>
+        </li>
+      </ul>
+    </nav>
+
+
+  </div>
+</footer>

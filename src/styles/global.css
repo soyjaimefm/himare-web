@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Montserrat Variable', sans-serif;
+  --font-serif: 'TheSeasons', 'serif';
+  --font-subtitle: 'GrandCruS', 'serif';
+  --color-hmblue: #80929f;
+  --color-hmsoftblue: #c5cdd1;
+  --color-hmwhite: #FFFFFF;
+  --color-hmbeige: #f1ede8;
+}
+
+@font-face {
+  font-family: 'TheSeasons';
+  src: url('/fonts/The-Seasons-Regular.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TheSeasons';
+  src: url('/fonts/The-Seasons-Light.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GrandCruS';
+  src: url('/fonts/fenotype-grand-cru-light-s.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
