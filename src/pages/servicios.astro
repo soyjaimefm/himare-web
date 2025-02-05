@@ -1,7 +1,38 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import HmH2 from '../components/ui/HmH2.astro';
+import HmH3 from '../components/ui/HmH3.astro';
 ---
 
 <Layout>
-  
+  <section>
+    <div class="flex flex-col md:flex-row">
+      <div class="w-full md:w-5/11">
+        <img class="w-full h-full object-cover aspect-square opacity-65" src="/servicios-section-1.jpg" alt="">
+      </div>
+      <div class="flex flex-col justify-center w-full md:w-6/11 text-center p-6 md:p-12 font-subtitle text-hmsoftblue">
+        <HmH2>COMUNICACIÓN</HmH2>
+        <HmH3>redes sociales</HmH3>
+        <p class="max-w-lg mx-auto">Planificamos y ejecutamos contenidos que generan engagement y construyen comunidades. De esta manera, tendrás más tiempo para enfocarte en otras áreas importantes de tu negocio.</p>
+        <HmH3>influencer marketing</HmH3>
+        <p class="max-w-lg mx-auto">¿Te gustaría enviar tus productos a creadores de contenido o construir una relación con estos perfiles en redes sociales? En HIMARË podemos encargarnos de conectar tu marca con las voces adecuadas para amplificar tu mensaje.</p>
+        <HmH3>atención al cliente</HmH3>
+        <p class="max-w-lg mx-auto">gestionamos la comunicación con tu audiencia de manera cercana y profesional.</p>
+        <HmH3>prensa</HmH3>
+        <p class="max-w-lg mx-auto">Hacer lo que haces está genial, pero contarlo a periodistas especializados y tener la opción de que tu trabajo aparezca en prensa es mucho mejor. Enviamos notas de prensa y dossieres a periodistas especializada en tu sector.</p>
+      </div>
+    </div>
+    <div class="flex flex-col md:flex-row bg-hmbeige">
+      <div class="flex flex-col justify-center w-full md:w-6/11 text-center p-6 md:p-12 font-subtitle text-hmblue">
+        <HmH2>BRANDING</HmH2>
+        <HmH3>imagen de marca</HmH3>
+        <p class="max-w-lg mx-auto">Creamos marcas con personalidad. Se trata de crear una imagen íntegra y coherente con tu proyecto. El proceso es muy sencillo: te pones en contacto con nosotros, te enviamos información de este servicio y nos reunimos para conocernos. Tendrás que responder un cuestionario y, a partir de aquí, empezaremos a crear la personalidad de tu marca y la propuesta creativa de diseño.</p>
+        <HmH3>diseño web</HmH3>
+        <p class="max-w-lg mx-auto">Diseñamos y desarrollamos sitios web que no solo son visualmente atractivos, sino también funcionales y alineados con tu estrategia. No es por presumir, ¡pero esta web la hemos creado nosotros!</p>
+      </div>
+      <div class="w-full md:w-5/11">
+        <img class="w-full h-full object-cover aspect-square opacity-65" src="/servicios-section-2.jpg" alt="">
+      </div>
+    </div>
+  </section>  
 </Layout>

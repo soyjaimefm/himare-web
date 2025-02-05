@@ -1,0 +1,7 @@
+---
+interface Props {
+  class?: string;
+}
+---
+
+<h1 class={`text-4xl md:text-5xl mb-8 tracking-widest text-center ${Astro.props.class}`}><slot/></h1>
