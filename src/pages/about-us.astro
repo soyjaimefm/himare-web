@@ -1,6 +1,41 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import HmH2 from '../components/ui/HmH2.astro';
+import HmH3 from '../components/ui/HmH3.astro';
 ---
 
-<Layout>  
+<Layout>
+  <section class="text-hmdarkblue">
+    <div class="container mx-auto text-center font-subtitle p-6 md:p-12 space-y-8">
+      <p class="max-w-2xl mx-auto">¡Hola! Mi nombre es Quiti y soy la fundadora de este estudio. Podemos decir que tengo dos grandes propósitos: crear y ayudar a los demás. HIMARË nace de esta pasión para ayudar a contar historias de manera auténtica y efectiva.</p>
+      <p class="max-w-2xl mx-auto">Con la ayuda de mis `manos derechas´ especializadas en diversos ámbitos, damos servicio a toda aquella marca o profesional que quiera elevar su reputación online.</p>
+      <p class="max-w-3xl mx-auto">Cuando empecé a estudiar, conocí a una profesora que me dijo que las Relaciones Públicas consistían en hacer las cosas muy bien, y luego contarlo a los demás. Si tú también estás haciendo las cosas bien y quieres conectar con tu público objetivo, ¡estás en el sitio correcto!</p>
+      <img class="md:max-w-xl aspect-9/10 object-cover mx-auto -mb-48 md:-mb-96" src="/about-us-section.jpg" alt="">
+    </div>
+  </section>
+  <section class="bg-hmbeige text-hmblue pt-44 md:pt-80">
+    <div class="container max-w-3xl mx-auto text-center font-subtitle p-6 md:p-12 space-y-6">
+      <HmH2>NUESTRA FILOSOFÍA</HmH2>
+      <p class="text-xl md:text-2xl">En HIMARË confiamos en que cada marca tiene una historia que merece ser contada. Nuestro trabajo consiste en ayudarte a descubrirla, darle forma y compartirla con el mundo.</p>
+    </div>
+  </section>
+  <section class="text-hmblue bg-[url('/about-us-bg.png')]">
+    <div class="bg-gradient-to-b from-white/90 to-white/90">
+      <div class="container max-w-4xl mx-auto text-center font-subtitle p-6 md:p-12 space-y-6">
+        <HmH2 class='text-hmblue'>NOS DISTINGUE</HmH2>
+        <HmH3 class="text-hmsoftblue">nuestro enfoque personalizado</HmH3>
+        <p class="text-hmdarkblue max-w-md mx-auto">No creemos en soluciones estándar.<br>Cada proyecto es único, y nos adaptamos a tus necesidades y objetivos.</p>
+        <HmH3 class="text-hmsoftblue">formación y acompañamiento</HmH3>
+        <p class="text-hmdarkblue max-w-md mx-auto">No solo hacemos el trabajo por ti; también te enseñamos cómo hacerlo, para que puedas crecer de manera autónoma.</p>
+        <HmH3 class="text-hmsoftblue">mix de creatividad y estrategia</HmH3>
+        <p class="text-hmdarkblue max-w-md mx-auto">Combinamos el pensamiento creativo con la planificación estratégica para ofrecerte lo mejor de ambos mundos.</p>
+        <p class="mt-12 text-hmblue text-3xl max-w-xl mx-auto">-estamos aquí para escucharte, entender tus necesidades y ayudarte a crecer-</p>
+      </div>
+    </div>
+  </section>
+  <section class="bg-hmbeige text-hmblue">
+    <div class="container max-w-4xl mx-auto text-center font-subtitle p-6 md:p-12 space-y-6">
+      <HmH2 class="mt-8"><a href="/contacta">¿QUIERES SABER MÁS?<br>¡HABLEMOS!</a></HmH2>
+    </div>
+  </section>
 </Layout>
