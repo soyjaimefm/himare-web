@@ -14,12 +14,12 @@ export const server = {
 
       const { data, error } = await resend.emails.send({
         from: 'HIMARE <himare@loveactually.es>',
-        to: ['jaimefrm93@gmail.com'],
+        to: ['quitinavarrom@gmail.com'],
         subject: 'HIMARE-FORMULARIO SERVICIOS',
         html: `${name} se ha puesto en contacto con Himare a través del formulario de servicios. Sus datos son los siguientes:<br><br>
         Nombre: ${name}<br><br>
         Email: ${email}<br><br>
-        Servicios: ${service.join(', ')}<br><br>
+        Servicios que le interesan: ${service.join(', ')}<br><br>
         Ha dejado este mensaje:<br>
         ${message}
         `
