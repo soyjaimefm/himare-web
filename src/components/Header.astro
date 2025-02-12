@@ -1,15 +1,17 @@
 ---
-import MenuIcon from "./icons/MenuIcon.astro";
-import SearchIcon from "./icons/SearchIcon.astro";
+import CurvedMenuIcon from "./icons/CurvedMenuIcon.astro"
 ---
 <!-- aquí con fixed lo hacemos sticky -->
 <header class="w-full bg-hmblue text-hmwhite">
   <div class="flex flex-col items-center gap-8 p-8">
+    <button id="button-menu" type="button" class="absolute top-[42px] left-4 md:hidden">
+      <CurvedMenuIcon class="size-7"/>
+    </button>
     <a class="font-serif text-5xl" href="/">
       HIMARË
     </a>
-    <nav class="hidden md:block w-full font-subtitle text-sm">
-      <ul class="flex items-center justify-center gap-16">
+    <nav id="nav-menu" class="transition-transform duration-300 -translate-x-full fixed top-24 bg-hmblue p-12 md:p-0 md:block md:relative md:top-0 w-full font-subtitle text-sm">
+      <ul class="flex flex-col md:flex-row items-center justify-center gap-16">
         <li>
           <a href="/servicios" class="hover:opacity-60 transition-opacity duration-300">servicios</a>
         </li>
@@ -29,3 +31,12 @@ import SearchIcon from "./icons/SearchIcon.astro";
     </nav>
   </div>
 </header>
+
+<script>
+  const buttonMenu = document.querySelector("#button-menu");
+  const navMenu = document.querySelector("#nav-menu");
+
+  buttonMenu?.addEventListener("click", () => {
+    navMenu?.classList.toggle("translate-x-0");
+  });
+</script>
