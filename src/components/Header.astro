@@ -37,7 +37,12 @@ import CurvedMenuIcon from "./icons/CurvedMenuIcon.astro"
   const navMenu = document.querySelector("#nav-menu");
 
   buttonMenu?.addEventListener("click", () => {
-    console.log('menu button')
-    navMenu?.classList.toggle("translate-x-0");
+    if (navMenu?.classList.contains('-translate-x-full')) {
+      navMenu?.classList.remove('-translate-x-full');
+      navMenu?.classList.add('translate-x-0');
+    } else {
+      navMenu?.classList.add('-translate-x-full');
+      navMenu?.classList.remove('translate-x-0');
+    }
   });
 </script>
