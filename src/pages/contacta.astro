@@ -1,7 +1,24 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import HmH1 from '../components/ui/HmH1.astro';
+import ContactForm from '../components/ContactForm.astro';
 ---
 
 <Layout>
+  <section class="bg-hmbeige">
+    <HmH1 class="text-hmblue pt-12 mb-12">¿TRABAJAMOS JUNTOS?</HmH1>
+    <div class="flex flex-col md:flex-row bg-hmbeige">
+      <div class="w-full md:w-3/11">
+        <img class="w-full h-56 md:h-full object-cover opacity-65" src="/himare-contact.jpg" alt="">
+      </div>
+      <div class="flex flex-col justify-center gap-8 w-full md:w-8/11 p-6 md:p-12 font-subtitle text-hmblue max-w-2xl mx-auto">
+        <p class="mx-auto text-center">Si tienes interés en alguno de nuestros servicios o no tienes muy claro cómo podemos ayudarte, escríbenos a hola@himarestudio.com o completa este formulario:</p>
+        <ContactForm formSource='CONTACTA'/>
+      </div>
+    </div>
+  </section>
+  <section>
+    <p class="text-center text-4xl text-hmblue font-subtitle tracking-widest p-12">¡gracias!</p>
+  </section>
   
 </Layout>

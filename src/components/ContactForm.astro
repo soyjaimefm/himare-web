@@ -1,0 +1,170 @@
+---
+interface Props {
+  formSource?: string;
+}
+
+const formSource = Astro.props.formSource || "default";
+---
+
+<form class="space-y-4" data-source={formSource}>
+  <div class={formSource === "CONTACTA" ? "text-center" : ""}>
+    <label for="name">Nombre completo</label>
+    <input
+      class="w-full outline-1 outline-hmsoftblue p-3 focus:outline-hmblue bg-hmwhite"
+      type="text"
+      name="name"
+      id="name"
+    />
+  </div>
+  <div class={formSource === "CONTACTA" ? "text-center" : ""}>
+    <label for="email">Email</label>
+    <input
+      class="w-full outline-1 outline-hmsoftblue p-3 focus:outline-hmblue bg-hmwhite"
+      type="email"
+      name="email"
+      id="email"
+    />
+  </div>
+  <div class={formSource === "CONTACTA" ? "text-center" : ""}>
+    <label for="message">Mensaje</label>
+    <textarea
+      class="w-full outline-1 outline-hmsoftblue p-3 focus:outline-hmblue bg-hmwhite"
+      rows="5"
+      name="message"
+      id="message"></textarea>
+  </div>
+  <div>
+    <span class="block mb-2">Servicios que te interesan:</span>
+    <label class="block">
+      <input
+        class="accent-hmsoftblue"
+        type="checkbox"
+        value="redes sociales"
+        name="service"
+      />
+      Redes sociales
+    </label>
+    <label class="block">
+      <input
+        class="accent-hmsoftblue"
+        type="checkbox"
+        value="Influencer marketing"
+        name="service"
+      />
+      Influencer marketing
+    </label>
+    <label class="block">
+      <input
+        class="accent-hmsoftblue"
+        type="checkbox"
+        value="Atención al cliente"
+        name="service"
+      />
+      Atención al cliente
+    </label>
+    <label class="block">
+      <input
+        class="accent-hmsoftblue"
+        type="checkbox"
+        value="Prensa"
+        name="service"
+      />
+      Prensa
+    </label>
+    <label class="block">
+      <input
+        class="accent-hmsoftblue"
+        type="checkbox"
+        value="Branding"
+        name="service"
+      />
+      Branding
+    </label>
+    <label class="block">
+      <input
+        class="accent-hmsoftblue"
+        type="checkbox"
+        value="Diseño web"
+        name="service"
+      />
+      Diseño web
+    </label>
+    <label class="block">
+      <input
+        class="accent-hmsoftblue"
+        type="checkbox"
+        value="Estrategia digital"
+        name="service"
+      />
+      Estrategia digital
+    </label>
+    <label class="block">
+      <input
+        class="accent-hmsoftblue"
+        type="checkbox"
+        value="Asesoría personalizada"
+        name="service"
+      />
+      Asesoría personalizada
+    </label>
+  </div>
+  <div class="mt-4 text-end">
+    <button
+      type="submit"
+      class="outline-1 outline-hmsoftblue p-3 focus:outline-hmblue bg-hmsoftblue text-hmwhite"
+    >
+      Enviar
+    </button>
+  </div>
+</form>
+<!-- LOADER -->
+<div
+  id="loader"
+  class="hidden fixed top-0 left-0 w-full h-full place-items-center bg-hmsoftblue bg-opacity-30 border border-gray-100 rounded-lg shadow-md"
+>
+  <div
+    class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-e-transparent align-[-0.125em] text-surface motion-reduce:animate-[spin_1.5s_linear_infinite]"
+    role="status"
+  >
+    <span
+      class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+      >Loading...</span
+    >
+  </div>
+</div>
+
+<script>
+  import { actions } from "astro:actions";
+  const form = document.querySelector("form");
+  const loader = document.querySelector("#loader");
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    loader?.classList.add("grid");
+    loader?.classList.remove("hidden");
+
+    const formData: FormData = new FormData(form as HTMLFormElement);
+    formData.append("formSource", form.dataset.source as string);
+    try {
+      const { error } = await actions.send(formData);
+      if (!error) {
+        loader?.classList.remove("grid");
+        loader?.classList.add("hidden");
+        form.reset();
+        alert(
+          "Gracias por escribirnos. En HIMARË nos encanta estar al día, así que te responderemos muy pronto. ¡Hablamos!",
+        );
+      } else {
+        loader?.classList.remove("grid");
+        loader?.classList.add("hidden");
+        alert(
+          "Ha habido un error, inténtalo de nuevo en unos minutos. También puedes contactarnos o escribirnos diréctamente a través de hola@himarestudio.com.",
+        );
+      }
+    } catch (e) {
+      loader?.classList.remove("grid");
+      loader?.classList.add("hidden");
+      alert("Ha habido un error, inténtalo de nuevo en unos minutos. También puedes contactarnos o escribirnos diréctamente a través de hola@himarestudio.com.");
+    }
+  });
+</script>

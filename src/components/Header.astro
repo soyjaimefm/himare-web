@@ -1,16 +1,15 @@
 ---
 import CurvedMenuIcon from "./icons/CurvedMenuIcon.astro"
 ---
-<!-- aquí con fixed lo hacemos sticky -->
 <header class="w-full bg-hmblue text-hmwhite">
   <div class="flex flex-col items-center gap-8 p-8">
     <button id="button-menu" type="button" class="absolute top-[42px] left-4 md:hidden">
       <CurvedMenuIcon class="size-7"/>
     </button>
-    <a class="font-serif text-5xl" href="/">
+    <a class="font-serif text-5xl text-center" href="/">
       HIMARË
     </a>
-    <nav id="nav-menu" class="transition-transform duration-300 -translate-x-full fixed z-10 top-24 bg-hmblue p-12 md:translate-x-0 md:p-0 md:block md:relative md:top-0 w-full font-subtitle text-sm">
+    <nav id="nav-menu" class="transition-transform duration-300 -translate-x-full absolute z-10 top-24 bg-hmblue p-12 md:translate-x-0 md:p-0 md:block md:relative md:top-0 w-full font-subtitle text-sm">
       <ul class="flex flex-col md:flex-row items-center justify-center gap-16">
         <li>
           <a href="/servicios" class="hover:opacity-60 transition-opacity duration-300">servicios</a>
