@@ -42,7 +42,7 @@ export const server = {
     handler: async (dataInput) => {
       const { data, error } = await resend.emails.send({
         from: 'HIMARE <himare@loveactually.es>',
-        to: ['jaimefrm93@gmail.com'],
+        to: ['quitinavarrom@gmail.com'],
         subject: `FELIZ SAN VALENTÍN`,
         html: `El otro día me dijiste una cosa en la que tenías toda la razón, hace demasiado tiempo que no te escribo una carta.<br>
         Así que pensé que hoy tenía la oportunidad, pero como últimamente me tienes motivado con este proyecto tan bonito he preferido hacerlo de una forma un poquito más especial. <br>
