@@ -3,16 +3,24 @@ import "../styles/global.css";
 import '@fontsource-variable/montserrat';
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = '', description = '' } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="es">
 	<head>
 		<meta charset="UTF-8" />
+		<meta name="description" content=`HIMARE - REDES SOCIALES, COMUNICACIÓN Y BRANDING${description}` />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
-		<title>HIMARË</title>
+		<title>HIMARË{title}</title>
 	</head>
 	<body class="tracking-widest">
 		<Header />
