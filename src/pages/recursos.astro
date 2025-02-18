@@ -1,7 +1,52 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import HmH2 from "../components/ui/HmH2.astro";
+import HmH3 from "../components/ui/HmH3.astro";
+import SubscriptionForm from "../components/SubscriptionForm.astro";
 ---
 
 <Layout>
-  
+  <img
+    class="w-full aspect-15/10 md:aspect-15/5 object-cover opacity-25"
+    src="/resources-section.jpg"
+    alt=""
+  />
+  <section class="bg-hmbeige text-hmblue">
+    <div
+      class="container max-w-4xl mx-auto text-center font-subtitle p-4 md:p-12 space-y-6"
+    >
+      <HmH2 class="mt-8">aquí encontrarás todos<br />nuestros productos digitales</HmH2>
+    </div>
+  </section>
+  <section class="text-hmblue font-subtitle py-12">
+    <a href="/recursos/como-funciona-instagram-2025">
+      <div class="flex flex-col md:flex-row container mx-auto">
+        <div
+          class="w-full md:w-4/7 border-t-2 md:border-b-2 border-hmsoftblue/35 flex items-center justify-center"
+        >
+          <HmH3 class="leading-12 text-2xl">¿Cómo funciona<br />instagram en 2025?</HmH3>
+        </div>
+        <div class="w-full md:w-3/7 p-4 md:py-12 md:px-8 space-y-2 border-b-2 md:border-b-0 border-hmsoftblue/35">
+          <p>
+            Si sientes que nunca acabas de ponerte al día y lo único que sabes
+            este año de Instagram es que ha cambiado el feed de cuadrado a
+            vertical...¡Necesitas descargarlo!
+          </p>
+          <p class="text-center">Es gratis</p>
+        </div>
+      </div>
+    </a>
+  </section>
+  <section class="text-hmblue font-subtitle py-12">
+    <div class="container mx-auto space-y-6 px-6">
+      <p class="text-3xl text-hmsoftblue text-center max-w-2xl mx-auto leading-12">
+        suscríbete a nuestra newsletter y te contaremos todos los nuevos
+        productos digitales que lancemos:
+      </p>
+      <div class="max-w-2xl mx-auto space-y-4">
+        <p class="text-xl">Suscríbete a nuestra newsletter</p>
+        <SubscriptionForm />
+      </div>
+    </div>
+  </section>
 </Layout>

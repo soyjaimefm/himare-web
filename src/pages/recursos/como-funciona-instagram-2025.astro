@@ -1,0 +1,92 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import HmH2 from "../../components/ui/HmH2.astro";
+import HmH3 from "../../components/ui/HmH3.astro";
+import SubscriptionForm from "../../components/SubscriptionForm.astro";
+import CloseIcon from "../../components/icons/CloseIcon.astro";
+---
+
+<Layout>
+  <section class="text-hmblue py-8">
+    <div class="container mx-auto font-subtitle p-4 space-y-6">
+      <p>home - recursos - ¿cómo funciona instagram en 2025?</p>
+      <div class="flex flex-col md:flex-row gap-y-8">
+        <div class="w-full md:w-4/7">
+          <img src="/portada-guia-ig.jpeg" alt="" />
+        </div>
+        <div class="w-full md:w-3/7 px-8 space-y-2 prose text-hmblue">
+          <p class="text-xl">Descripción</p>
+          <p class="">
+            La guía definitiva para dominar Instagram y todos los cambios que se
+            han incorporado a la aplicación recientemente.
+          </p>
+          <p class="">¿Para quién es esta guía?</p>
+          <ul>
+            <li>
+              Para quienes sienten que su contenido no llega a su audiencia.
+            </li>
+            <li>
+              Para quienes quieren dominar reels, stories y carruseles…Pero no
+              saben muy bien por dónde empezar.
+            </li>
+            <li>
+              Para quienes están cansados de cometer errores comunes y quieren
+              soluciones prácticas.
+            </li>
+            <li>
+              Para quienes quieren no tienen mucho tiempo pero necesitan
+              entender cómo usar los hashtags, conectar con su comunidad,
+              aumentar su alcance…
+            </li>
+          </ul>
+          <p>DESCARGA INMEDIATA:</p>
+          <p>Recibirás un correo con la guía en formato PDF.</p>
+          <div class="text-center px-8">
+            <button
+              id="popupbutton"
+              class="outline-1 w-full outline-hmsoftblue p-3 focus:outline-hmblue bg-hmsoftblue text-hmwhite"
+              >¡La quiero!</button
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div
+    id="popup"
+    role="dialog"
+    aria-modal="false"
+    aria-label="description"
+    data-message="message"
+    class="hidden fixed top-0 left-0 w-full h-full place-items-center bg-hmsoftblue z-20"
+  >
+    <div
+      class="font-subtitle aspect-video bg-hmbeige -translate-y-1/2 top-1/2 rounded-lg -translate-x-1/2 left-1/2 absolute md:p-12 md:w-1/2 2xl:w-1/3 max-w-4xl flex flex-col justify-around"
+    >
+      <a id="closeIcon" class="cursor-pointer">
+        <CloseIcon class="absolute right-3 top-3" />
+      </a>
+      <p class="text-md text-hmblue text-center mb-8">
+        Introduce tu correo electrónico <br> para descargar la guía:
+      </p>
+      <SubscriptionForm formSource="guia-gratuita"/>
+    </div>
+  </div>
+</Layout>
+
+
+<script>
+
+  const popup = document.querySelector("#popup");
+  const button = document.querySelector("#popupbutton");
+  const closeIcon = document.querySelector("#closeIcon");
+
+  button?.addEventListener("click", () => {
+    popup?.classList.remove("hidden");
+  });
+
+  closeIcon?.addEventListener("click", (e) => {
+    popup?.classList.add("hidden");    
+  });
+</script>

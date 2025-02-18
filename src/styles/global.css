@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+@plugin "@tailwindcss/typography";
+
+
 @theme {
   --font-sans: 'Montserrat Variable', sans-serif;
   --font-serif: 'TheSeasons', 'serif';

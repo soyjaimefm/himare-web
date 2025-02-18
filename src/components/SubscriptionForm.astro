@@ -1,0 +1,51 @@
+---
+interface Props {
+  formSource?: string;
+}
+
+const formSource = Astro.props.formSource || "default";
+---
+
+<form class="space-y-4" data-source={formSource}>
+  <div>
+    <label for="email">Correo electrónico*</label>
+    <input
+      class="w-full outline-1 outline-hmsoftblue p-3 focus:outline-hmblue bg-hmwhite"
+      type="email"
+      name="email"
+      id="email"
+    />
+  </div>
+  <div class="mt-4 text-end">
+    <button type="submit" class="md:w-64 outline-1 outline-hmsoftblue p-3 focus:outline-hmblue bg-hmsoftblue text-hmwhite">
+      Enviar
+    </button>
+  </div>
+</form>
+
+<script>
+  import { actions } from "astro:actions";
+  const form = document.querySelector("form");
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData: FormData = new FormData(form as HTMLFormElement);
+    const { error } = await actions.mailchimpSuscribe(formData);
+
+    if (!error) {
+      form.reset();
+      if(form.dataset.source === "guia-gratuita") {
+        document.location.href = "/HIMARE_STUDIO_GUIA_INSTAGRAM_EN_2025.pdf";
+      } else {
+        alert(
+          "Gracias por suscribirte.",
+        );
+      }
+    } else {
+      alert(
+        "Ha habido un error, inténtalo de nuevo en unos minutos.",
+      );
+    }
+  });
+</script>

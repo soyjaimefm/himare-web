@@ -41,15 +41,11 @@ export const server = {
   mailchimpSuscribe: defineAction({
     accept: 'form',
     handler: async (formData) => {
-      const name = formData.get("name");
       const email = formData.get("email");
 
       const data = {
         email_address: email,
-        status: 'subscribed',
-        merge_fields: {
-          FNAME: name,
-        },
+        status: 'subscribed'
       };
 
       const response = await fetch(
@@ -63,6 +59,12 @@ export const server = {
           body: JSON.stringify(data),
         }
       );
+
+      const reponsedData = await response.json();
+
+      if(response.ok || reponsedData.title === 'Member Exists') {
+        return true;
+      }
 
       if (!response.ok) {
         throw new ActionError({
