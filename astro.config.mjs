@@ -17,5 +17,6 @@ export default defineConfig({
     },
   }),
 
+  site: 'https://www.himarestudio.com/',
   integrations: [sitemap()]
 });
