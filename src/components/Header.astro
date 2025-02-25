@@ -3,7 +3,7 @@ import CurvedMenuIcon from "./icons/CurvedMenuIcon.astro"
 ---
 <header class="w-full bg-hmblue text-hmwhite">
   <div class="flex flex-col items-center gap-8 p-8">
-    <button id="button-menu" type="button" class="absolute top-[42px] left-4 md:hidden">
+    <button id="button-menu" type="button" class="absolute top-[42px] left-4 md:hidden" aria-expanded="false" aria-label="Alternar menú de navegación">
       <CurvedMenuIcon class="size-7"/>
     </button>
     <a class="font-serif text-5xl text-center" href="/">
@@ -32,16 +32,5 @@ import CurvedMenuIcon from "./icons/CurvedMenuIcon.astro"
 </header>
 
 <script>
-  const buttonMenu = document.querySelector("#button-menu");
-  const navMenu = document.querySelector("#nav-menu");
-
-  buttonMenu?.addEventListener("click", () => {
-    if (navMenu?.classList.contains('-translate-x-full')) {
-      navMenu?.classList.remove('-translate-x-full');
-      navMenu?.classList.add('translate-x-0');
-    } else {
-      navMenu?.classList.add('-translate-x-full');
-      navMenu?.classList.remove('translate-x-0');
-    }
-  });
+  import "./Header.js";
 </script>
