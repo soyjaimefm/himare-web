@@ -1,7 +1,34 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import HmH2 from '../components/ui/HmH2.astro';
+import HmH1 from '../components/ui/HmH1.astro';
 ---
 
 <Layout>
-  
+
+  <section class="bg-hmbeige text-hmblue">
+    <div class="container max-w-2xl mx-auto text-center font-subtitle p-6 md:p-12 space-y-6">
+      <h1 class="font-subtitle text-2xl/normal md:text-3xl/normal tracking-widest text-center">aquí encontrarás a algunos de los clientes que han confiado en HIMARË</h1>
+    </div>
+  </section>
+  <section class="bg-[url('/about-us-bg.png')] bg-cover bg-center bg-no-repeat">
+    <div class="bg-gradient-to-b from-white/80 to-white/80">
+      <div class="grid grid-cols-3 place-items-center border-b-4 border-hmsoftblue/35">
+        <img src="/logo-esquire.png" class="max-w-80" alt="">
+        <img src="/tiktok-esquire.png" class="max-w-80" alt="">
+        <p class="font-subtitle text-hmblue tracking-widest text-xl/normal text-center">Gestión de RRSS</p>
+      </div>
+      <div class="grid grid-cols-3 place-items-center border-b-2 border-hmsoftblue">
+        <p class="font-subtitle text-hmblue tracking-widest text-xl/normal text-center">Web e identidad<br>corporativa</p>
+        <img src="/love-actually-web.png" class="max-w-80" alt="">
+        <img src="/love-actually-logo.png" class="max-w-80" alt="">
+      </div>
+
+      <div class="grid grid-cols-3 place-items-center border-b-2 border-hmsoftblue">
+        <img src="/bluelow-logo.png" class="max-w-80" alt="">
+        <img src="/bluelow-web.png" class="max-w-80" alt="">
+        <p class="font-subtitle text-hmblue tracking-widest text-xl/normal text-center">Gestión de RRSS,<br>prensa, atención<br>al cliente</p>
+      </div>
+    </div>
+  </section>
 </Layout>
