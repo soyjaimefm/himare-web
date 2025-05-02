@@ -1,5 +1,4 @@
 function headerListeners() {
-  console.log('listeners');
   const buttonMenu = document.querySelector("#button-menu");
   const navMenu = document.querySelector("#nav-menu");
 

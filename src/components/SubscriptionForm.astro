@@ -1,12 +1,12 @@
 ---
 interface Props {
-  formSource?: string;
+  resourceName?: string;
 }
 
-const formSource = Astro.props.formSource || "default";
+const resourceName = Astro.props.resourceName || "default";
 ---
 
-<form class="space-y-4" data-source={formSource}>
+<form class="space-y-4" data-resource={resourceName} data-astro-reload>
   <div>
     <label for="email">Correo electrónico*</label>
     <input
@@ -17,7 +17,10 @@ const formSource = Astro.props.formSource || "default";
     />
   </div>
   <div class="mt-4 text-end">
-    <button type="submit" class="md:w-64 outline-1 outline-hmsoftblue p-3 focus:outline-hmblue bg-hmsoftblue text-hmwhite">
+    <button
+      type="submit"
+      class="md:w-64 outline-1 outline-hmsoftblue p-3 focus:outline-hmblue bg-hmsoftblue text-hmwhite"
+    >
       Enviar
     </button>
   </div>
@@ -25,27 +28,33 @@ const formSource = Astro.props.formSource || "default";
 
 <script>
   import { actions } from "astro:actions";
-  const form = document.querySelector("form");
+  document.addEventListener("astro:page-load", () => {
+    const form = document.querySelector("form");
 
-  form?.addEventListener("submit", async (e) => {
-    e.preventDefault();
+    form?.addEventListener("submit", async (e) => {
+      console.log("form submit");
+      e.preventDefault();
 
-    const formData: FormData = new FormData(form as HTMLFormElement);
-    const { error } = await actions.mailchimpSuscribe(formData);
+      const formData: FormData = new FormData(form as HTMLFormElement);
+      formData.append("resourceName", form.dataset.resource as string);
 
-    if (!error) {
-      form.reset();
-      if(form.dataset.source === "guia-gratuita") {
-        document.location.href = "/HIMARE_STUDIO_GUIA_INSTAGRAM_EN_2025.pdf";
+      const { error, data } = await actions.mailchimpSuscribe(formData);
+
+      if (!error) {
+        form.reset();
+        if (form.dataset.resource === "como-funciona-instagram-2025") {
+          document.location.href = "/HIMARE_STUDIO_GUIA_INSTAGRAM_EN_2025.pdf";
+        } else if (form.dataset.resource === "calendario-community-manager") {
+          document.location.href = "/Calendario_Community_Manager_HIMARE.pdf";
+        } else {
+          let closeIcon: HTMLElement | null =
+            document.querySelector("#closeIcon");
+          closeIcon?.click();
+          alert("Gracias por suscribirte.");
+        }
       } else {
-        alert(
-          "Gracias por suscribirte.",
-        );
+        alert("Ha habido un error, inténtalo de nuevo en unos minutos.");
       }
-    } else {
-      alert(
-        "Ha habido un error, inténtalo de nuevo en unos minutos.",
-      );
-    }
+    });
   });
 </script>

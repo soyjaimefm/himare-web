@@ -42,19 +42,21 @@ export const server = {
     accept: 'form',
     handler: async (formData) => {
       const email = formData.get("email");
+      const resourceName = formData.get("resourceName");
 
       const data = {
         email_address: email,
-        status: 'subscribed'
+        status_if_new: 'subscribed',
+        tags: [resourceName]
       };
 
       const response = await fetch(
-        `https://${import.meta.env.MAILCHIMP_DC}.api.mailchimp.com/3.0/lists/${import.meta.env.MAILCHIMP_AUDIENCE_ID}/members`,
+        `https://${import.meta.env.MAILCHIMP_DC}.api.mailchimp.com/3.0/lists/${import.meta.env.MAILCHIMP_AUDIENCE_ID}/members/${email}`,
         {
-          method: 'POST',
+          method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
-            Authorization: `Bearer ${import.meta.env.MAILCHIMP_API_KEY}`,
+            Authorization: `apikey ${import.meta.env.MAILCHIMP_API_KEY}`,
           },
           body: JSON.stringify(data),
         }
