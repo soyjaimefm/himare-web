@@ -42,7 +42,7 @@ import CloseIcon from "../../components/icons/CloseIcon.astro";
           <p>Descarga el calendario en formato PDF.</p>
           <div class="text-center px-8">
             <button
-              id="popupbutton"
+              id="popupbutton-calendario"
               class="outline-1 w-full outline-hmsoftblue p-3 focus:outline-hmblue bg-hmsoftblue text-hmwhite cursor-pointer"
               >¡Lo quiero!</button
             >
@@ -53,7 +53,7 @@ import CloseIcon from "../../components/icons/CloseIcon.astro";
   </section>
 
   <div
-    id="popup"
+    id="popup-calendario"
     role="dialog"
     aria-modal="false"
     aria-label="description"
@@ -63,11 +63,11 @@ import CloseIcon from "../../components/icons/CloseIcon.astro";
     <div
       class="font-subtitle aspect-video bg-hmbeige -translate-y-1/2 top-1/2 rounded-lg -translate-x-1/2 left-1/2 w-[90%] p-6 absolute md:p-12 md:w-1/2 2xl:w-1/3 max-w-4xl flex flex-col justify-around"
     >
-      <a id="closeIcon" class="cursor-pointer">
+      <a id="closeIcon-calendario" class="cursor-pointer">
         <CloseIcon class="absolute right-3 top-3" />
       </a>
       <p class="text-md text-hmblue text-center mb-8">
-        Introduce tu correo electrónico <br /> para descargar la guía:
+        Introduce tu correo electrónico <br /> para descargar el calendario:
       </p>
       <SubscriptionForm resourceName="calendario-community-manager" />
     </div>
@@ -76,9 +76,9 @@ import CloseIcon from "../../components/icons/CloseIcon.astro";
 
 <script>
   document.addEventListener("astro:page-load", () => {
-    const popup = document.querySelector("#popup");
-    const button = document.querySelector("#popupbutton");
-    const closeIcon = document.querySelector("#closeIcon");
+    const popup = document.querySelector("#popup-calendario");
+    const button = document.querySelector("#popupbutton-calendario");
+    const closeIcon = document.querySelector("#closeIcon-calendario");
 
     button?.addEventListener("click", () => {
       popup?.classList.remove("hidden");
