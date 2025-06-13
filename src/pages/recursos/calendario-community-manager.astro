@@ -75,17 +75,57 @@ import CloseIcon from "../../components/icons/CloseIcon.astro";
 </Layout>
 
 <script>
-  document.addEventListener("astro:page-load", () => {
-    const popup = document.querySelector("#popup-calendario");
-    const button = document.querySelector("#popupbutton-calendario");
-    const closeIcon = document.querySelector("#closeIcon-calendario");
+  let cleanup = () => {};
 
-    button?.addEventListener("click", () => {
-      popup?.classList.remove("hidden");
+  function setupPopup() {
+    const popup = document.querySelector<HTMLDivElement>("#popup-calendario");
+    const button = document.querySelector<HTMLButtonElement>("#popupbutton-calendario");
+    const closeIcon = document.querySelector<HTMLAnchorElement>("#closeIcon-calendario");
+
+    if (!popup || !button || !closeIcon) {
+      console.warn("Popup elements not found");
+      return;
+    }
+
+    const showPopup = () => {
+      popup.classList.remove("hidden");
+      popup.setAttribute("aria-modal", "true");
+      document.body.style.overflow = "hidden";
+    };
+
+    const hidePopup = () => {
+      popup.classList.add("hidden");
+      popup.setAttribute("aria-modal", "false");
+      document.body.style.overflow = "";
+    };
+
+    // Event listeners
+    button.addEventListener("click", showPopup);
+    closeIcon.addEventListener("click", hidePopup);
+    
+    // Click outside to close
+    popup.addEventListener("click", (e) => {
+      if (e.target === popup) {
+        hidePopup();
+      }
     });
 
-    closeIcon?.addEventListener("click", (e) => {
-      popup?.classList.add("hidden");
-    });
-  });
+    // ESC key to close
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && popup.getAttribute("aria-modal") === "true") {
+        hidePopup();
+      }
+    };
+    document.addEventListener("keydown", handleEscape);
+
+    // Cleanup function
+    cleanup = () => {
+      button.removeEventListener("click", showPopup);
+      closeIcon.removeEventListener("click", hidePopup);
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }
+
+  document.addEventListener("astro:page-load", setupPopup);
+  document.addEventListener("astro:before-swap", () => cleanup());
 </script>
