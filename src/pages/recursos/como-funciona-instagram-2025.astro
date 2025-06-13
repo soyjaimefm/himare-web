@@ -80,6 +80,7 @@ import CloseIcon from "../../components/icons/CloseIcon.astro";
   let cleanup = () => {};
 
   function setupPopup() {
+    console.log("Setting up Instagram popup");
     const popup = document.querySelector<HTMLDivElement>("#popup-instagram");
     const button = document.querySelector<HTMLButtonElement>("#popupbutton-instagram");
     const closeIcon = document.querySelector<HTMLAnchorElement>("#closeIcon-instagram");
