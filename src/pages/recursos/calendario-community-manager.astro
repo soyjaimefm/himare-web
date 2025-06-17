@@ -75,9 +75,18 @@ import CloseIcon from "../../components/icons/CloseIcon.astro";
 </Layout>
 
 <script>
-  let cleanup = () => {};
-
   function setupPopup() {
+
+
+    console.log("Setting up Calendario popup... INTENTO");
+
+    if(window.location.pathname !== "/recursos/calendario-community-manager") {
+      console.log("Not on the specific page, skipping popup setup.");
+      return; // Exit if not on the specific page
+    }
+
+    console.log("Setting up Calendario popup...");
+
     const popup = document.querySelector<HTMLDivElement>("#popup-calendario");
     const button = document.querySelector<HTMLButtonElement>("#popupbutton-calendario");
     const closeIcon = document.querySelector<HTMLAnchorElement>("#closeIcon-calendario");
@@ -117,15 +126,7 @@ import CloseIcon from "../../components/icons/CloseIcon.astro";
       }
     };
     document.addEventListener("keydown", handleEscape);
-
-    // Cleanup function
-    cleanup = () => {
-      button.removeEventListener("click", showPopup);
-      closeIcon.removeEventListener("click", hidePopup);
-      document.removeEventListener("keydown", handleEscape);
-    };
   }
 
   document.addEventListener("astro:page-load", setupPopup);
-  document.addEventListener("astro:before-swap", () => cleanup());
 </script>
